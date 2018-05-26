@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/mediaelement-and-player.min.js"></script>
+		<link rel="stylesheet" href="css/video.css" media="screen">
+
+	<style type="text/css">
+		html, body { margin: 0;	padding: 0; }
+		body { background: #f2f2f2  no-repeat top center; padding-top: 50px; }
+		.mejs-container { margin: 0 auto; }
+	</style>
+	<meta name="robots" content="noindex,follow" />
+	</head>
+	<body>
+		<video width="800" height="300" poster="img/sheep8.jpg">
+		<source src="media/sheep2.mp4" type="video/mp4">
+	</video>
+
+	<script>
+	$(document).ready(function() {
+		$('video').mediaelementplayer({
+			alwaysShowControls: false,
+			videoVolume: 'horizontal',
+			features: ['playpause','progress','volume','fullscreen']
+		});
+	});
+	</script>
+	</body>
+</html>

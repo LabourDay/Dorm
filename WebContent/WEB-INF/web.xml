@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+		 xmlns="http://java.sun.com/xml/ns/javaee" 
+		 xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" 
+		 version="3.0">
+   <context-param>
+    <param-name>login</param-name>
+    <param-value>/index.jsp</param-value>
+  </context-param>
+  <filter>
+        <filter-name>struts2</filter-name>
+        <filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>struts2</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+    
+    <filter>
+	  <filter-name>login_filter</filter-name>
+	  <filter-class>com.interceptor.LoginFilter</filter-class>
+	</filter>
+    <filter-mapping>
+      <filter-name>login_filter</filter-name>
+      <url-pattern>*.jsp</url-pattern>
+    </filter-mapping>
+    
+    <!--   <filter>
+    <filter-name>EncodingFilter</filter-name>
+    <filter-class>com.storage.filter.EncodingFilter</filter-class>
+    <init-param>
+      <param-name>Encoding</param-name>
+      <param-value>utf-8</param-value>
+    </init-param>
+  </filter>
+  <filter-mapping>
+    <filter-name>EncodingFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping> -->
+ 
+<!--   <filter>
+    <filter-name>SessionLoinFilter</filter-name>
+    <filter-class>com.storage.filter.SessionLoinFilter</filter-class>
+    <init-param>
+      <param-name>logo</param-name>
+      <param-value>login.jsp,workerRegister.jsp,*.css,*.js,*.jpg)</param-value>
+    </init-param>
+  </filter>
+  <filter-mapping>
+    <filter-name>SessionLoinFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>  -->
+  
+  <welcome-file-list>
+    <welcome-file>login.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>

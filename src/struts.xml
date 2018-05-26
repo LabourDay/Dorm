@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+  
+    <!-- Add packages here -->
+    <constant name="struts.devMode" value="true" />
+
+     <package name="default" namespace="/" extends="struts-default">
+    	<interceptors>
+	    <interceptor name="login" class="com.interceptor.LoginInterceptor" />
+	    <interceptor-stack name="myStack">
+	      <interceptor-ref name="defaultStack" />
+	      <interceptor-ref name="login"></interceptor-ref>
+	    </interceptor-stack>
+	  </interceptors>
+	  
+	  <default-interceptor-ref name="myStack" />
+    	<action name="Login" class="com.action.LoginAction">
+    		<result name="success">/index.jsp</result>    		
+    		<result name="error">/login.jsp</result> 
+    	 </action>
+    	 
+    	 <action name="updatePw" class="com.action.UpdatePasswdAction">
+    	 	<result name="success">/login.jsp</result>
+    	 </action>
+    </package>
+    
+    <package name="logout" namespace="/" extends="struts-default">
+    	<action name="logout" class="com.action.LogoutAction">
+    		<result name="success">/login.jsp</result>
+    	</action>
+    </package>
+    
+    <package name="member" namespace="/" extends="struts-default">
+    	<action name="member" class="com.action.MemberAction">
+    		<result name="all">/member.jsp</result>
+    		<result name="add_success">/submit.jsp</result>
+    		<result name="add_fail">/submit.jsp</result>
+    		<result name="find">/member.jsp</result>
+    		<result name="del_success">/submit.jsp</result>
+    		<result name="del_fail">/submit.jsp</result>
+    		<result name="transUpdate">/updateMember.jsp</result>
+    		<result name="update_success">/submit.jsp</result>
+    		<result name="update_fail">/submit.jsp</result>
+    	</action>
+    </package>
+    
+
+</struts>

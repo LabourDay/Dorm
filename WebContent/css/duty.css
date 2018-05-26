@@ -1,0 +1,12 @@
+@charset "utf-8";
+body{ background-size: cover; background-color: #292929; }
+*{ margin: 0px; padding: 0px; font-family: "微软雅黑"; outline: none;}
+
+section{width: 80%; margin: auto; margin-top: 20px; padding: 5%; border: 1px solid white; text-align: center; border-radius: 10px; background: rgba(255,255,255,0.6);}
+section label{ display: block; line-height: 52px;}
+section label input{ width:60% ; height: 30px; font-size: 24px; padding-left: 10px; color: green; border-radius: 30px;}
+section footer {display: flex; text-align: center;}
+section footer button{ margin: auto; width:120px ; height: 40px; font-size: 22px; color: white; border: 1px solid white; border-radius: 4px;}
+section footer .reset{margin-right: 16px; background: #fd00ff;}
+section footer .begin{ background: green;}
+section .showNum{ height: 88px; line-height: 88px; font-size: 88px; font-weight: bold; color: green; text-shadow: 0px 2px 4px gray;}
